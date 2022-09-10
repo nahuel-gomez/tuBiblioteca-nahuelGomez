@@ -1,4 +1,4 @@
-import venderLibros from "./Libros_de_segunda_mano.jpg"
+import venderLibros from "../imagenes/Libros_de_segunda_mano.jpg"
 
 const Vender = (props) => {
     return (

@@ -1,3 +1,4 @@
+import CartWidget from "./CartWidget";
 
 const NavBar = () => {
     return (
@@ -19,7 +20,7 @@ const NavBar = () => {
             <div className="loguearse"> 
                 <input type="text" placeholder="Buscar"></input>    
                 <button type="button" className="botonLogin">Login</button>
-                <button type="button" className="botonCarrito">Carritos</button>                
+                <a type="button" ><CartWidget /></a>                
             </div>              
           </nav>
       </>

@@ -1,4 +1,4 @@
-import comprarlibros from "./comprarLibros.jpg"
+import comprarlibros from "../imagenes/comprarLibros.jpg"
 
 const Comprar = (props) => {
     return (

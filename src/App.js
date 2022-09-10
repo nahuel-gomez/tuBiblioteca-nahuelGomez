@@ -1,9 +1,15 @@
 import "./App.css";
-import NavBar  from "./Header";
-import Comprar from "./Comprar";
-import Vender from "./Vender";
+import NavBar  from "./componentes/Header";
+import Comprar from "./componentes/Comprar";
+import Vender from "./componentes/Vender";
+import ContadorCarrito from "./componentes/ItemCount";
 
 const App = () => {
+  
+  const OnAdd = (cantidad) => {
+    alert(`Usted tiene ${cantidad} en el carrito`)
+  }
+ 
   return(
       <>
         <body>
@@ -20,6 +26,7 @@ const App = () => {
               atiende = "Nelson Vivas"
               formasPago = "Tarjetas Visa solamente"/>
           </aside>
+          <ContadorCarrito conteoStart={1} stock={5} OnAdd={OnAdd}/>          
         </body>
       </>
   )
