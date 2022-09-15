@@ -1,0 +1,23 @@
+[33mcommit ff968c406b78659e1ab69d0c242792d67f5a80d1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Nahuel Gómez <nnahuelggomez@gmail.com>
+Date:   Sat Sep 10 14:09:23 2022 -0300
+
+    Contador con boton
+
+[33mcommit d3295ff7856aeebadb33c803a9e36f4308da462f[m
+Author: Nahuel Gómez <nnahuelggomez@gmail.com>
+Date:   Wed Sep 7 07:46:50 2022 -0300
+
+    para landing
+
+[33mcommit 904fc9f94397920b843d4a17d62965de874cc5f3[m
+Author: Nahuel Gómez <nnahuelggomez@gmail.com>
+Date:   Tue Sep 6 04:02:33 2022 -0300
+
+    creando Navbar
+
+[33mcommit a18cd6d81f3132abc8da7d35ddec57533fdea73d[m
+Author: Nahuel Gómez <nnahuelggomez@gmail.com>
+Date:   Thu Aug 25 16:40:53 2022 -0300
+
+    Initialize project using Create React App

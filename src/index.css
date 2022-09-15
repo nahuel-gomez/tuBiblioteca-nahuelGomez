@@ -5,6 +5,16 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+body {
+  background: linear-gradient(#c4dbb41a, rgba(247, 247, 247, 1) ), url(./imagenes/bicycle-1209845_1280.jpg);
+  width: 100%;
+  height: 300vh;
+  background-position: center;
+  background-size: cover;
+}
+
+/* HEADER */
+
 header {
   width: 100%;
   height: 11vh;
@@ -30,10 +40,10 @@ nav{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 2%;
+  margin-top: 0;
 }
-.logo {
-  width: 15%;
+.imgLogo {
+  width: 100px;
 }
 
 .navegacion {
@@ -64,13 +74,35 @@ nav{
 
 .loguearse {
   width: 23%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  margin-right: 30px;
+  
 }
 .loguearse a {
-  height: 5px;
+  height: 2px;
 }
+
+.botonCarrito{
+  width: 20px;
+  margin-top: -12px;
+  margin-left: 12px;
+  transform: scale(0.8);
+} 
+
+.Contadoricito{
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 20px;
+  color: #f7f7f7;  
+  margin: 0px 0px -12px 30px;
+  text-align: center;
+}
+
+.Contadoricito p {
+  transform: scale(0.9);
+}
+
+/* FIN HEADER */
 
 /*  ASIDE */
  aside {
@@ -80,11 +112,6 @@ nav{
   flex-direction: row;
   justify-content: space-around;
 }
-
-/* .imgTarjeta {
-  width: 100%;
-  height: auto;
-} */
 
 .botonAcceso {
   width: 40%;
@@ -107,7 +134,7 @@ nav{
 }
 .botonAcceso figure div{
   position: absolute;
-  top: 0; 
+  top: 0px; 
   width: 100%;
   height: 100%;
   background: linear-gradient(rgba(196, 219, 180, 0.4), rgba(247, 247, 247, 0.7) );
@@ -120,7 +147,7 @@ nav{
   text-decoration: none;
 }
 .botonAcceso figure div a h2{
-  margin: 15% 0% 0% 37%;
+  margin: 5% 0% 0% 37%;
   text-transform: uppercase;
   text-decoration: none;
   color: black;
@@ -164,22 +191,86 @@ h4 {
 
 
 
-.botonCarrito{
-  width: 30px;
-  margin-top: -17px;
-} 
 
-.Contadoricito{
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  border-radius: 20px;
-  color: #f7f7f7;  
-  margin-left: 15px;
-  text-align: center;
+/* muestra de listado de libros */
+
+.ventaLibros {
+  width: 95%;
+  height: 375vh;
+  border: solid 2px;
+  background: rgba(247, 247, 247, 0.75);
+  margin: auto;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: center;
 }
 
-.Contadoricito p {
-  
+
+.cuadritoMuestras {
+  width: 95%;
+  height: 100%;  
+  display:grid;
+  grid-template-columns: 24% 24% 24% 24%;
+  gap: 15px;   
+}
+
+.cardcita{
+  width: 97%;
+  height: 350px;  
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: solid black 1px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);    
+  transition: all 0.25s;    
   transform: scale(1);
+  cursor: pointer; 
 }
+
+.cardcita:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tapaLibro {
+  width: 40%;
+  height: 9%;  
+  margin: auto;
+}
+
+.infoLibro{
+  width: 55%;
+  height: 95%;  
+  margin: auto;  
+}
+
+.imgTapaLibro {
+  width: 800%;
+  height: 20%;
+  border-radius: 10px;
+}
+
+.textoInfoLibro{
+
+  margin: 5% 3px 0 0; 
+}
+
+.botonAgregar{
+  width: 170px;
+  height: 30px;
+  background-color: rgb(13, 110, 253);
+  color: #f7f7f7;
+  border: #f7f7f7 1px;
+  border-radius: 5px;
+}
+
+.imgCard {
+  width: 30%;
+}
+
