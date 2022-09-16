@@ -2,7 +2,7 @@ import { useState } from "react"
 
 
 const ContadorCarrito = (props) => {
-    const [rate, setRate] = useState (props.conteoStart) 
+    const [rate, setRate] = useState (1) 
 
     const hidenClickSumar = () => {
         setRate (rate + 1)

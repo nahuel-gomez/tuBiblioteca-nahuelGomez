@@ -1,9 +1,10 @@
 import "./App.css";
 import NavBar  from "./componentes/Header";
-import Comprar from "./componentes/Comprar";
+/* import Comprar from "./componentes/Comprar";
 import Vender from "./componentes/Vender";
 import ContadorCarrito from "./componentes/ItemCount";
-import ArrayLibros from "./componentes/containers/ArrayLibros";
+import ArrayLibros from "./componentes/containers/ArrayLibros"; */
+import ItemDetailItem  from "./componentes/ItemDetailItem";
 
 const App = () => {
   
@@ -17,7 +18,7 @@ const App = () => {
           <header>
             <NavBar />
           </header>
-          <aside>
+          {/* <aside>
             <Comprar 
               horario = "De mañana"
               atiende = "Sergio Sigal"
@@ -34,8 +35,9 @@ const App = () => {
                 <div className="cuadritoMuestras">
                     <ArrayLibros/>
                 </div>
-          </div><br></br>         
-          <ContadorCarrito conteoStart={1} stock={5} OnAdd={OnAdd}/><br></br>       
+          </div><br></br>          
+          <ContadorCarrito conteoStart={1} stock={5} OnAdd={OnAdd}/><br></br>*/}
+          <ItemDetailItem/>    
         </body>
       </>
   )

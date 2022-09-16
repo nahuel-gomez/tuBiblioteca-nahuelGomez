@@ -15,7 +15,8 @@ const ArrayLibros = () => {
     
     return (
         <> 
-            {                
+            {
+                
                 dataLibros.map(itemLibro => (
                         <MuestraLibros 
                             key={itemLibro.id}
@@ -25,7 +26,8 @@ const ArrayLibros = () => {
                             añoEdicion={itemLibro.añoEdicion}
                             genero={itemLibro.genero}
                             precio={itemLibro.precio}
-                            tapa={itemLibro.tapa} />))                
+                            tapa={itemLibro.tapa} />))
+                
             }
         </>
     );
