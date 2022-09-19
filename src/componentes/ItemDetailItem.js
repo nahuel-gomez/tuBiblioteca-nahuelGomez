@@ -2,15 +2,21 @@ import ContadorCarrito from "./ItemCount";
 import { useState, useEffect } from "react";
 import arrayDatadeBasedeDatos from "../utilitys/BasedeDatos"
 import consultaPromesa from "../utilitys/Promesas"
+import { useParams } from "react-router-dom";
 
 const ItemDetailItem = () => {
     const [dataLibros, setDataLibro] = useState ({})
+    const {idItemDOM} = useParams ()
     
     useEffect(() => {
-        consultaPromesa(2000, arrayDatadeBasedeDatos[11])
-            .then(result => setDataLibro(result))
+        if (idItemDOM) {
+            consultaPromesa(2000, arrayDatadeBasedeDatos)
+            .then(result => setDataLibro(arrayDatadeBasedeDatos.find(item => item.idItemBD == idItemDOM)))
             .catch(err => console.log(err))
-    })
+        }else {
+        <p>No se ha encotrado</p>
+        }
+    },[idItemDOM])
     return (
         <>
             <div className="cardGigante">

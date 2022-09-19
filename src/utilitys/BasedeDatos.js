@@ -1,6 +1,8 @@
 const arrayDatadeBasedeDatos = [
     {
-        id: 1,
+        id: 1,       
+        idItemBD: 1,
+        idCategoryBD: 7,
         nombre: "Isabel viendo llover en Macondo",        
         autor: "Gabriel Garcia Marquez",
         editorial: "Estuario",
@@ -13,6 +15,8 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 2,
+        idItemBD: 2,
+        idCategoryBD: 7,
         nombre: "La borra y el cafe" ,
         autor: "Mario Benedeti",
         editorial: "Planeta S.A.",
@@ -25,6 +29,8 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 3,
+        idItemBD: 3,
+        idCategoryBD: 6,
         nombre: "El hechizo del agua",
         autor: "Florencia Bonelli",
         editorial: "Planeta S.A.",
@@ -37,6 +43,8 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 4,
+        idItemBD: 4,
+        idCategoryBD: 6,
         nombre: "El arte de amar",
         autor: "Erich From",
         editorial: "PlanetaLector", 
@@ -49,6 +57,8 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 5,
+        idItemBD: 5,
+        idCategoryBD: 5,
         nombre: "Don Quijote de la mancha",
         autor: "Miguel de Cervantes",
         editorial: "Imprenta Juan de la Cuesta", 
@@ -61,6 +71,8 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 6,
+        idItemBD: 6,
+        idCategoryBD: 5,
         nombre: "La vida es un sueño", 
         autor: "Pedro Calderón de la Barca", 
         editorial: "Nula", 
@@ -73,6 +85,8 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 7,
+        idItemBD: 7,
+        idCategoryBD: 5,
         nombre: "1984", 
         autor: "George Orwell", 
         editorial: "Zig-Zag",
@@ -85,6 +99,8 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 8,
+        idItemBD: 8,
+        idCategoryBD: 7,
         nombre: "El amor en tiempos de cólera", 
         autor: "Garcia Marquez", 
         editorial: "La oveja negra LTDA", 
@@ -97,6 +113,8 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 9,
+        idItemBD: 9,
+        idCategoryBD: 7,
         nombre: "De amor y de sombra", 
         autor: "Isabel Allende", 
         editorial: "De bolsillo, Colección", 
@@ -109,6 +127,8 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 10,
+        idItemBD: 10,
+        idCategoryBD: 6,
         nombre: "Noches blancas", 
         autor: "Green John, Johnson M., Myracle L.", 
         editorial: "La oveja negra LTDA", 
@@ -121,6 +141,8 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 11,
+        idItemBD: 11,
+        idCategoryBD: 6,
         nombre: "El Arte de Mirar", 
         autor: "Susan Woodford", 
         editorial: "Nube de tinta", 
@@ -133,6 +155,8 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 12,
+        idItemBD: 12,
+        idCategoryBD: 6,
         nombre: "El lenguaje del alma", 
         autor: "Josep Soler", 
         editorial: "Gaia Ediciones", 
@@ -144,5 +168,7 @@ const arrayDatadeBasedeDatos = [
         tapa: "https://http2.mlstatic.com/D_NQ_NP_783955-MLA46401685136_062021-O.webp",
     },
 ];
-
+//antiguos 5
+//reflexivos 6
+// historias 7
 export default arrayDatadeBasedeDatos;

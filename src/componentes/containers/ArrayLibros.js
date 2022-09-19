@@ -2,33 +2,48 @@ import MuestraLibros from "../MuestraLibros"
 import { useState, useEffect } from "react";
 import arrayDatadeBasedeDatos from "../../utilitys/BasedeDatos"
 import consultaPromesa from "../../utilitys/Promesas"
+import { useParams } from "react-router-dom";
 
 
 const ArrayLibros = () => {
-    const [dataLibros, setDataLibro] = useState ([])
+    const [dataLibros, setDataLibros] = useState ([])
+    const {idCategoryDOM} = useParams ()
+
+    
     
     useEffect(() => {
-        consultaPromesa(7000, arrayDatadeBasedeDatos)
-            .then(data => setDataLibro(arrayDatadeBasedeDatos))
-            .catch(err => console.log(err))
-    })
+        if (idCategoryDOM) {
+            consultaPromesa(2000, arrayDatadeBasedeDatos)
+                .then(result => setDataLibros(arrayDatadeBasedeDatos.filter(item => item.idCategoryBD == idCategoryDOM)))
+                .catch(err => console.log(err))
+        }else { 
+            consultaPromesa(2000, arrayDatadeBasedeDatos)
+                .then(result => setDataLibros(arrayDatadeBasedeDatos))
+                .catch(err => console.log(err))
+        }
+        
+    }, [idCategoryDOM])
     
     return (
-        <> 
-            {
+        <> <div className="ventaLibros" >                
+                <div className="cuadritoMuestras">
+                {                
+                        dataLibros.map(itemLibro => (
+                                <MuestraLibros 
+                                    key={itemLibro.id}
+                                    nombre= {itemLibro.nombre}
+                                    autor= {itemLibro.autor}
+                                    editorial= {itemLibro.editorial}
+                                    añoEdicion={itemLibro.añoEdicion}
+                                    genero={itemLibro.genero}
+                                    precio={itemLibro.precio}
+                                    tapa={itemLibro.tapa}
+                                    idItemBD= {itemLibro.idItemBD} />))
                 
-                dataLibros.map(itemLibro => (
-                        <MuestraLibros 
-                            key={itemLibro.id}
-                            nombre= {itemLibro.nombre}
-                            autor= {itemLibro.autor}
-                            editorial= {itemLibro.editorial}
-                            añoEdicion={itemLibro.añoEdicion}
-                            genero={itemLibro.genero}
-                            precio={itemLibro.precio}
-                            tapa={itemLibro.tapa} />))
-                
-            }
+                }
+                </div>
+            </div><br></br>  
+            
         </>
     );
 }

@@ -3,16 +3,16 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from "./CartWidget";
 import logoBiblio from "../imagenes/logoBiblio.png"
+import {Link} from "react-router-dom"
 
 function NavBar() {
   return (
     <Navbar class="" bg="light" expand="lg">
       <Container fluid>
       <img src= {logoBiblio} alt="" className="imgLogo"></img>
-        <Navbar.Brand href="#">Tu Bilbioteca</Navbar.Brand>
+        <Link to="/" className='sinDecoracion'><Navbar.Brand href="#">Tu Bilbioteca</Navbar.Brand></Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -20,29 +20,12 @@ function NavBar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
+            <Link to="/category/5" className='sinDecoracion'><Nav.Link href="#action1">Antiguos</Nav.Link></Link>
+            <Link to="/category/6" className='sinDecoracion'><Nav.Link href="#action1">Reflexivos</Nav.Link></Link>
+            <Link to="/category/7" className='sinDecoracion'><Nav.Link href="#action1">Historias</Nav.Link></Link>                      
           </Nav>
           <Form className="d-flex loguearse">
-            <Form.Control
-              type="search"
-              placeholder="Buscar"
-              className="me-2"
-              aria-label="Search"
-            />
+            <Button variant="outline-success">Login</Button>            
             <Button variant="outline-success">Buscar</Button>
             <a type="button" ><CartWidget /></a>     
           </Form>

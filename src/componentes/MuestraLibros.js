@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 
 const MuestraLibros = (props) => {
@@ -10,12 +11,9 @@ const MuestraLibros = (props) => {
             <Card.Body className=''>
                 <Card.Title><h4>"{props.nombre}"</h4></Card.Title>
                 <Card.Title><h5>{props.autor}</h5></Card.Title>
-                <Card.Text>Genero: {props.genero}<br></br>  
-                           Año: {props.añoEdicion}<br></br>  
-                           Editorial: {props.editorial}<br></br>
-                           Precio: ${props.precio}<br></br>  
-                </Card.Text>                
-                <Button variant="primary">Agregar al Carrito</Button>
+                <Card.Text>Precio: ${props.precio}<br></br></Card.Text>                
+                <Link to= {`/productos/${props.idItemBD}`} ><Button variant="primary">Ver detalles</Button></Link><br></br><br></br>
+                <Button variant="primary">Agregar al Carrito</Button> 
             </Card.Body>
         </Card>              
         );

@@ -1,10 +1,11 @@
 import "./App.css";
 import NavBar  from "./componentes/Header";
-/* import Comprar from "./componentes/Comprar";
+import Comprar from "./componentes/Comprar";
 import Vender from "./componentes/Vender";
 import ContadorCarrito from "./componentes/ItemCount";
-import ArrayLibros from "./componentes/containers/ArrayLibros"; */
+import ArrayLibros from "./componentes/containers/ArrayLibros"; 
 import ItemDetailItem  from "./componentes/ItemDetailItem";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = () => {
   
@@ -13,34 +14,44 @@ const App = () => {
   }
  
   return(
-      <>
+        <BrowserRouter>
+            <NavBar/>
+            <Routes>
+                <Route path="/" element={<ArrayLibros/>}/>
+                <Route path="/productos/:idItemDOM" element={<ItemDetailItem/>}/>
+                <Route path="/category/:idCategoryDOM" element={<ArrayLibros/>}/>
+                <Route path="*" element={<img src="https://dinahosting.com/blog/cont/uploads/2021/03/error-404.jpg"></img>}/>              
+            </Routes>
+        </BrowserRouter>
+
+        )
+}
+
+
+
+
+
+
+     /*  <>
         <body>
           <header>
-            <NavBar />
+            
           </header>
-          {/* <aside>
+           <aside>
             <Comprar 
               horario = "De mañana"
               atiende = "Sergio Sigal"
               formasPago = "Efectivo, MP"/>
-            <Vender
+            <Vender                                                                    
               horario = "De tarde"
               atiende = "Nelson Vivas"
               formasPago = "Tarjetas Visa solamente"/>
-          </aside>
-            <div className="ventaLibros" >
-                <div className="tituloVenta">
-                    <h2>¿Qué te gustaría leer?</h2>
-                </div>
-                <div className="cuadritoMuestras">
-                    <ArrayLibros/>
-                </div>
-          </div><br></br>          
-          <ContadorCarrito conteoStart={1} stock={5} OnAdd={OnAdd}/><br></br>*/}
-          <ItemDetailItem/>    
+          </aside>       
+                                
+          <ContadorCarrito conteoStart={1} stock={5} OnAdd={OnAdd}/><br></br>
+        <ItemDetailItem/>   
         </body>
-      </>
-  )
-}
+  </> */
+
 
 export default App
