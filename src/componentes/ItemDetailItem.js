@@ -3,8 +3,16 @@ import { useState, useEffect } from "react";
 import arrayDatadeBasedeDatos from "../utilitys/BasedeDatos"
 import consultaPromesa from "../utilitys/Promesas"
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 const ItemDetailItem = () => {
+    const [count, setCount] = useState (0)
+
+    const onAdd = (contador) => {
+        alert(`Su carrito tiene ${contador} productos`)
+        setCount(contador)
+    }
     const [dataLibros, setDataLibro] = useState ({})
     const {idItemDOM} = useParams ()
     
@@ -31,7 +39,11 @@ const ItemDetailItem = () => {
                     <p>{dataLibros.descripcion}</p>
                     <p>Año: {dataLibros.añoEdicion}</p>
                     <p>Precio: $ {dataLibros.precio}</p>
-                    <ContadorCarrito stock={dataLibros.stock}/>
+                        {
+                            count === 0
+                            ? <ContadorCarrito stock={dataLibros.stock}  onAdd={onAdd}/>
+                            : <Link to="/carrito/"><Button variant="danger">Revisa el carrito</Button></Link>
+                        }
                 </div>
 
             </div>
