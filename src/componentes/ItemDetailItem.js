@@ -4,16 +4,24 @@ import arrayDatadeBasedeDatos from "../utilitys/BasedeDatos"
 import consultaPromesa from "../utilitys/Promesas"
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button'; 
+import { useContext } from "react"
+import { CarritoContext } from "./containers/CartContext"
+
 
 const ItemDetailItem = () => {
     const [count, setCount] = useState (0)
 
+    const cartcontexto = useContext(CarritoContext)
     const onAdd = (contador) => {
         alert(`Su carrito tiene ${contador} productos`)
         setCount(contador)
+        cartcontexto.addItem (dataLibros, contador)
+        console.log(dataLibros)        
     }
+    
     const [dataLibros, setDataLibro] = useState ({})
+
     const {idItemDOM} = useParams ()
     
     useEffect(() => {
@@ -24,7 +32,8 @@ const ItemDetailItem = () => {
         }else {
         <p>No se ha encotrado</p>
         }
-    },[idItemDOM])
+    },[idItemDOM])   
+
     return (
         <>
             <div className="cardGigante">

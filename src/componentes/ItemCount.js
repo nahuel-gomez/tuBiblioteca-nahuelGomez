@@ -25,7 +25,7 @@ const ContadorCarrito = (props) => {
                 <Button variant="outline-success" onClick={hidenClickRestar}> - </Button>                                        
                 <h3> {rate} </h3>
                 <Button variant="outline-success" onClick={hidenClickSumar}> + </Button>                
-                <Button variant="primary"onClick={() => props.onAdd(rate)} disabled={rate <= 0}>Agregar al carrito</Button>                     
+                <Button variant="primary" onClick={() => props.onAdd(rate)} disabled={rate <= 0}>Agregar al carrito</Button>                     
             </div>
         </>
     )

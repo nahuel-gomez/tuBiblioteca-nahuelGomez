@@ -1,10 +1,30 @@
+import { useContext } from "react"
+import { CarritoContext } from "./containers/CartContext"
+import ListadelCarrito from "./ListadelCarrito"
+import Button from 'react-bootstrap/Button'
+
 const ElCarrito = () => {
+     
+    const contexto = useContext(CarritoContext)    
+
     return(
-        <>  
-            <h1>EL CARRITO</h1>
-            <img src="http://2.bp.blogspot.com/-gHy2ZBA2wkE/UG2PQv34OPI/AAAAAAAAAOA/qh2jP9nMGgk/s1600/raisingthebar.png"></img>
-        </>
+        <div className="elCarrito">             
+                {contexto.cartList.map(item => (
+                    <ListadelCarrito                        
+                        id={item.id}
+                        nombre= {item.nombre}
+                        autor= {item.autor}
+                        editorial= {item.editorial}
+                        añoEdicion={item.añoEdicion}
+                        precio={item.precio}
+                        tapa={item.tapa}
+                        cantidad={contexto.addItem}                        
+                        />
+                ))} <br></br>               
+                <Button className="quitarTodoCarrito" onClick={contexto.clearAll} variant="dark">Quitar todo del carrito</Button><br></br>
+        </div>
     )
 }
 
 export default ElCarrito
+
