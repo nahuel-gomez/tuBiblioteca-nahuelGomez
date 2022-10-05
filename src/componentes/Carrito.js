@@ -10,7 +10,8 @@ const ElCarrito = () => {
     return(
         <div className="elCarrito">             
                 {contexto.cartList.map(item => (
-                    <ListadelCarrito                        
+                    <ListadelCarrito
+                        key={item.id}                       
                         id={item.id}
                         nombre= {item.nombre}
                         autor= {item.autor}

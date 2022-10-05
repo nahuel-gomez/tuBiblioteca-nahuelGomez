@@ -14,7 +14,7 @@ const ArrayLibros = () => {
     useEffect(() => {
         if (idCategoryDOM) {
             consultaPromesa(2000, arrayDatadeBasedeDatos)
-                .then(result => setDataLibros(arrayDatadeBasedeDatos.filter(item => item.idCategoryBD == idCategoryDOM)))
+                .then(result => setDataLibros(arrayDatadeBasedeDatos.filter(item => item.idCategoryBD === +idCategoryDOM)))
                 .catch(err => console.log(err))
         }else { 
             consultaPromesa(2000, arrayDatadeBasedeDatos)
