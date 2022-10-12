@@ -19,7 +19,7 @@ const ElCarrito = () => {
                         añoEdicion={item.añoEdicion}
                         precio={item.precio}
                         tapa={item.tapa}
-                        cantidad={contexto.addItem}                        
+                        cantidad={item.newcantidad}                        
                         />
                 ))} <br></br>               
                 <Button className="quitarTodoCarrito" onClick={contexto.clearAll} variant="dark">Quitar todo del carrito</Button><br></br>

@@ -17,7 +17,7 @@ const ItemDetailItem = () => {
         alert(`Su carrito tiene ${contador} productos`)
         setCount(contador)
         cartcontexto.addItem (dataLibros, contador)
-        console.log(dataLibros)        
+               
     }
     
     const [dataLibros, setDataLibro] = useState ({})
@@ -26,8 +26,8 @@ const ItemDetailItem = () => {
     
     useEffect(() => {
         if (idItemDOM) {
-            consultaPromesa(2000, arrayDatadeBasedeDatos)
-            .then(result => setDataLibro(arrayDatadeBasedeDatos.find(item => item.idItemBD == idItemDOM)))
+            consultaPromesa(2000, arrayDatadeBasedeDatos.find(item => item.idItemBD === +idItemDOM))
+            .then(result => setDataLibro(result))
             .catch(err => console.log(err))
         }else {
         <p>No se ha encotrado</p>

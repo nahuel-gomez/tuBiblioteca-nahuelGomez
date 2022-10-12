@@ -6,7 +6,7 @@ import { useContext } from "react"
 
 const ListadelCarrito = (props) => {
     const contexto = useContext(CarritoContext)    
-    
+   
     return(
         <>
         <div className="dentroDelCarrito">
@@ -22,7 +22,7 @@ const ListadelCarrito = (props) => {
                 <div className="precioLibroCarrito">
                     <br></br><br></br>
                     <h4>$ {props.precio}</h4>
-                    <h5>cantidad: {props.cantidad}</h5> <br></br>
+                    <h5>cantidad: {props.cantidad }</h5> <br></br>
                     <Button onClick={() => contexto.removeItem(props.id)} variant="dark">Quitar del carrito</Button>
                 </div>      
         </div><br></br><hr></hr><br></br>     
