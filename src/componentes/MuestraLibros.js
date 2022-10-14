@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const MuestraLibros = (props) => {    
     
-  return (   
+  return (      
         <Card style={{ width: '18rem'}}>
             <Card.Img variant="top" src={props.tapa} className='mgCard'/>
             <Card.Body className=''>
@@ -15,7 +15,7 @@ const MuestraLibros = (props) => {
                 <Link to= {`/productos/${props.idItemBD}`} ><Button variant="primary">Ver detalles</Button></Link><br></br><br></br>
                 <Button variant="primary"  >Agregar al Carrito</Button> 
             </Card.Body>
-        </Card>              
+        </Card>                 
         );
 }
 

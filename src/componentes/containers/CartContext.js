@@ -6,13 +6,16 @@ const CarritoContexProvider = ({children}) => {
    
     const [cartList, seTCartList] = useState([]) //declaramos el estado global en uno locar con useState en array vacio 
 
-    const addItem = (producto, newcantidad) => { // para agregar items al carrito como funcion global
+    const addItem = (producto, newcantidad) => { // para agregar items al carrito como funcion global       
         
-        console.log("antes del set", cartList)
-        seTCartList([{...producto, newcantidad}])
-        console.log("despues del set", cartList)
+        let consultaProducto = cartList.find(e => e.id === producto.id) // busca si ya hay un producto un mismo porducto
         
-        
+        if (consultaProducto){ // si es verdad que sólo sume su cantidad al item
+            consultaProducto.newcantidad += newcantidad
+            seTCartList([...cartList])
+        }else { // caso contrario que lo agregue
+            seTCartList([...cartList, {...producto, newcantidad}])
+        }        
     }
     
     const clearAll = () => {  // vaciar el carrito
@@ -23,8 +26,14 @@ const CarritoContexProvider = ({children}) => {
         seTCartList(cartList.filter(item => item.id !== id))        
     }
 
+     const calcItemsQty = () => {
+        let acumuladorContador = cartList.map(item => item.newcantidad)  // contador o sumador de items en el carrito
+        return acumuladorContador.reduce(((previo, actual) => previo + actual), 0)
+    }
+
+
     return(
-        <CarritoContext.Provider value={{cartList, addItem, clearAll, removeItem}}>
+        <CarritoContext.Provider value={{cartList, addItem, clearAll, removeItem, calcItemsQty}}>
             { children }
         </CarritoContext.Provider>
     )

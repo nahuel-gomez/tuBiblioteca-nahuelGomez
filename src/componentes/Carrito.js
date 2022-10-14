@@ -6,12 +6,12 @@ import Button from 'react-bootstrap/Button'
 const ElCarrito = () => {
      
     const contexto = useContext(CarritoContext)    
-
+    
     return(
         <div className="elCarrito">             
-                {contexto.cartList.map(item => (
+                {contexto.cartList.map((item, idx) => (
                     <ListadelCarrito
-                        key={item.id}                       
+                        key={idx}                       
                         id={item.id}
                         nombre= {item.nombre}
                         autor= {item.autor}

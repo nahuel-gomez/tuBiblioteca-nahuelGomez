@@ -17,7 +17,7 @@ const ItemDetailItem = () => {
         alert(`Su carrito tiene ${contador} productos`)
         setCount(contador)
         cartcontexto.addItem (dataLibros, contador)
-               
+        cartcontexto.calcItemsQty()                          
     }
     
     const [dataLibros, setDataLibro] = useState ({})
@@ -26,7 +26,7 @@ const ItemDetailItem = () => {
     
     useEffect(() => {
         if (idItemDOM) {
-            consultaPromesa(2000, arrayDatadeBasedeDatos.find(item => item.idItemBD === +idItemDOM))
+            consultaPromesa(200, arrayDatadeBasedeDatos.find(item => item.idItemBD === +idItemDOM))
             .then(result => setDataLibro(result))
             .catch(err => console.log(err))
         }else {

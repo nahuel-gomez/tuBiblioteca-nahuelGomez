@@ -1,6 +1,7 @@
 const arrayDatadeBasedeDatos = [
     {
-        id: 1,       
+        id: 1,
+        key: 331,       
         idItemBD: 1,
         idCategoryBD: 7,
         nombre: "Isabel viendo llover en Macondo",        
@@ -15,6 +16,7 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 2,
+        key: 332,
         idItemBD: 2,
         idCategoryBD: 7,
         nombre: "La borra y el cafe" ,
@@ -29,6 +31,7 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 3,
+        key: 333,
         idItemBD: 3,
         idCategoryBD: 6,
         nombre: "El hechizo del agua",
@@ -43,6 +46,7 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 4,
+        key: 334,
         idItemBD: 4,
         idCategoryBD: 6,
         nombre: "El arte de amar",
@@ -57,6 +61,7 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 5,
+        key: 335,
         idItemBD: 5,
         idCategoryBD: 5,
         nombre: "Don Quijote de la mancha",
@@ -71,6 +76,7 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 6,
+        key: 336,
         idItemBD: 6,
         idCategoryBD: 5,
         nombre: "La vida es un sueño", 
@@ -85,6 +91,7 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 7,
+        key: 337,
         idItemBD: 7,
         idCategoryBD: 5,
         nombre: "1984", 
@@ -99,6 +106,7 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 8,
+        key: 338,
         idItemBD: 8,
         idCategoryBD: 7,
         nombre: "El amor en tiempos de cólera", 
@@ -113,6 +121,7 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 9,
+        key: 339,
         idItemBD: 9,
         idCategoryBD: 7,
         nombre: "De amor y de sombra", 
@@ -127,6 +136,7 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 10,
+        key: 3310,
         idItemBD: 10,
         idCategoryBD: 6,
         nombre: "Noches blancas", 
@@ -141,6 +151,7 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 11,
+        key: 3311,
         idItemBD: 11,
         idCategoryBD: 6,
         nombre: "El Arte de Mirar", 
@@ -155,6 +166,7 @@ const arrayDatadeBasedeDatos = [
     },
     {
         id: 12,
+        key: 3312,
         idItemBD: 12,
         idCategoryBD: 6,
         nombre: "El lenguaje del alma", 

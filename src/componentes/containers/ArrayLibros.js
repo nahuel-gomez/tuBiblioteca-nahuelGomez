@@ -8,42 +8,44 @@ import { useParams } from "react-router-dom";
 const ArrayLibros = () => {
     const [dataLibros, setDataLibros] = useState ([])
     const {idCategoryDOM} = useParams ()
-
-    
+    const [loading, setLoading] = useState(true)   
     
     useEffect(() => {
         if (idCategoryDOM) {
             consultaPromesa(2000, arrayDatadeBasedeDatos)
-                .then(result => setDataLibros(arrayDatadeBasedeDatos.filter(item => item.idCategoryBD === +idCategoryDOM)))
+                .then(result => {
+                    setDataLibros(arrayDatadeBasedeDatos.filter(item => item.idCategoryBD === +idCategoryDOM))
+                    setLoading(false)})
                 .catch(err => console.log(err))
+                                                          
         }else { 
             consultaPromesa(2000, arrayDatadeBasedeDatos)
-                .then(result => setDataLibros(arrayDatadeBasedeDatos))
+                .then(result => {
+                    setDataLibros(arrayDatadeBasedeDatos)
+                    setLoading(false)})
                 .catch(err => console.log(err))
+                                 
         }
         
     }, [idCategoryDOM])
     
     return (
-        <> <div className="ventaLibros" >                
-                <div className="cuadritoMuestras">
-                {                
-                        dataLibros.map(itemLibro => (
-                                <MuestraLibros 
-                                    key={itemLibro.id}
-                                    nombre= {itemLibro.nombre}
-                                    autor= {itemLibro.autor}
-                                    editorial= {itemLibro.editorial}
-                                    añoEdicion={itemLibro.añoEdicion}
-                                    genero={itemLibro.genero}
-                                    precio={itemLibro.precio}
-                                    tapa={itemLibro.tapa}
-                                    idItemBD= {itemLibro.idItemBD} />))
-                
-                }
-                </div>
-            </div><br></br>  
-            
+        <>
+            <div className="ventaLibros" > {loading ? <img src="https://media.tenor.com/wXTO9bFFJXMAAAAC/loading-slow-internet.gif"></img> :                
+                    <div className="cuadritoMuestras">                    
+                        {dataLibros.map(itemLibro => (
+                            <MuestraLibros 
+                                key={itemLibro.id}
+                                nombre= {itemLibro.nombre}
+                                autor= {itemLibro.autor}
+                                editorial= {itemLibro.editorial}
+                                añoEdicion={itemLibro.añoEdicion}
+                                genero={itemLibro.genero}
+                                precio={itemLibro.precio}
+                                tapa={itemLibro.tapa}
+                                idItemBD= {itemLibro.idItemBD} />))}
+                    </div> }
+            </div> <br></br> 
         </>
     );
 }
